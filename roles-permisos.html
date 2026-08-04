@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roles y permisos en Discord: la jerarquía mínima que necesitas</title>
+<meta name="description" content="Cómo configurar roles y permisos en un servidor de Discord sin crear un caos de permisos superpuestos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html" class="active">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">roles-y-permisos</p>
+    <h1>Cuatro niveles de rol bastan para empezar</h1>
+    <p class="post-meta">Guía Discord <span class="sep">·</span> actualizado recientemente <span class="sep">·</span> 5 min de lectura</p>
+  </section>
+
+  <article>
+    <p>Cuantos más roles con permisos superpuestos crees, más difícil será saber quién puede hacer qué — y más fácil será que alguien tenga, sin darse cuenta, un permiso que nunca debió tener. La mayoría de servidores funciona bien con cuatro niveles claros, y solo necesita añadir roles adicionales cuando la comunidad crece lo suficiente como para justificarlo.</p>
+
+    <h2>Administrador</h2>
+    <p>Tiene control total del servidor: puede modificar canales, roles, integraciones y configuración general. Este rol debería tener el menor número posible de personas — idealmente uno o dos fundadores de confianza — porque cualquier error o cuenta comprometida con este rol puede desconfigurar todo el servidor en segundos.</p>
+
+    <h2>Moderador</h2>
+    <p>Puede silenciar, expulsar y gestionar mensajes, pero no debería poder cambiar la configuración del servidor ni los permisos de otros roles. Separar moderación de administración es la decisión de seguridad más importante que puedes tomar: significa que un moderador problemático puede ser corregido sin que haya tenido nunca la capacidad de borrar el servidor entero.</p>
+
+    <h2>Miembro verificado</h2>
+    <p>Es el rol que debería tener la mayoría de personas: acceso completo a los canales de comunidad, una vez pasan un paso mínimo de verificación al entrar. Separar "miembro sin verificar" de "miembro verificado" es lo que evita que cuentas de spam vean o escriban en tus canales principales desde el primer segundo.</p>
+
+    <h2>Bot</h2>
+    <p>Cada bot debería tener permisos mínimos y específicos para lo que hace, nunca "Administrador" por comodidad. Un bot de moderación necesita permiso para expulsar y silenciar; no necesita permiso para modificar roles o borrar canales. Revisa esto al invitar cada bot nuevo.</p>
+
+    <div class="callout">
+      <p><strong>Regla práctica:</strong> antes de dar un permiso, pregúntate qué pasaría si la cuenta que lo tiene se compromete o actúa por error. Si la respuesta te preocupa, ese permiso probablemente no debería estar en ese rol.</p>
+    </div>
+
+    <h2>Errores comunes al configurar roles</h2>
+    <ul>
+      <li><strong>Dar "Administrador" como premio:</strong> convertir el rol de admin en una especie de reconocimiento por antigüedad, en lugar de una decisión de seguridad, es la forma más común en que un servidor pierde el control.</li>
+      <li><strong>Crear roles decorativos sin permisos reales:</strong> roles de color o insignia están bien, pero si se multiplican sin lógica, terminan por confundir sobre quién tiene autoridad real.</li>
+      <li><strong>No revisar la jerarquía de roles:</strong> en Discord, un rol solo puede gestionar roles que estén por debajo suyo en la lista. Si el orden está mal, un moderador puede terminar sin poder silenciar a alguien con un rol mal ubicado por encima.</li>
+    </ul>
+
+    <p>Una jerarquía de roles simple no es una limitación — es lo que hace que el servidor sea predecible tanto para quienes lo administran como para quienes lo usan a diario.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

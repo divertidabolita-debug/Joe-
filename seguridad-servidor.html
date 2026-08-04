@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguridad básica para tu servidor de Discord: raids, spam y verificación</title>
+<meta name="description" content="Cómo proteger un servidor de Discord de raids, cuentas falsas y spam de bots con configuraciones básicas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html" class="active">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">seguridad</p>
+    <h1>Seguridad básica: raids, spam y verificación</h1>
+    <p class="post-meta">Guía Discord <span class="sep">·</span> actualizado recientemente <span class="sep">·</span> 6 min de lectura</p>
+  </section>
+
+  <article>
+    <p>Un servidor que crece atrae dos tipos de problemas: cuentas de spam automatizadas que entran en masa, y personas que coordinan un "raid" — una invasión organizada para llenar canales de mensajes ofensivos o inundar el servidor. Ninguno de los dos requiere herramientas caras, pero sí requiere configurarlos antes de que ocurran, no después.</p>
+
+    <h2>Nivel de verificación del servidor</h2>
+    <p>Discord incluye un nivel de verificación configurable desde los ajustes del servidor, que exige requisitos mínimos a una cuenta antes de poder escribir (por ejemplo, tener el correo verificado o llevar un tiempo mínimo registrada en Discord). Subir este nivel es la medida individual más efectiva contra cuentas de spam recién creadas.</p>
+
+    <h2>Pantalla de bienvenida y reglas obligatorias</h2>
+    <p>Activar la función de "aceptar reglas" antes de que un miembro nuevo pueda ver el resto del servidor filtra automáticamente a los bots que entran solo para spamear enlaces, ya que la mayoría no completa ese paso.</p>
+
+    <h2>Límite de menciones y enlaces</h2>
+    <p>Configurar un bot de moderación para limitar cuántas menciones o enlaces puede enviar un mensaje evita el patrón más común de raid: un grupo de cuentas nuevas mencionando a todos o pegando el mismo enlace de forma simultánea.</p>
+
+    <div class="tree">
+      <p class="tree-category">Checklist rápido de seguridad</p>
+      <div class="tree-channel">nivel de verificación en "alto" o "muy alto"</div>
+      <div class="tree-channel">pantalla de bienvenida activada</div>
+      <div class="tree-channel">automod con filtro de enlaces y menciones masivas</div>
+      <div class="tree-channel">rol "sin verificar" separado del rol de miembro</div>
+      <div class="tree-channel">2FA obligatorio para moderadores y admins</div>
+    </div>
+
+    <h2>Autenticación en dos pasos para el equipo de moderación</h2>
+    <p>Discord permite exigir autenticación en dos pasos (2FA) para poder usar acciones de moderación en el servidor. Activarlo obliga a que cualquier cuenta con permisos de moderador o admin tenga una capa extra de seguridad, lo que reduce mucho el riesgo de que una cuenta robada se use para dañar el servidor desde dentro.</p>
+
+    <h2>Qué hacer si ya estás sufriendo un raid</h2>
+    <ol>
+      <li><strong>Sube el nivel de verificación de inmediato</strong> a "muy alto" desde la configuración del servidor — esto corta la entrada de cuentas nuevas al instante.</li>
+      <li><strong>Activa el modo lento (slowmode)</strong> en los canales afectados para frenar el volumen de mensajes.</li>
+      <li><strong>Bloquea temporalmente los canales públicos</strong> quitando el permiso de enviar mensajes al rol de miembro mientras identificas a las cuentas involucradas.</li>
+      <li><strong>Expulsa o banea en bloque</strong> usando el panel de auditoría para identificar cuentas creadas el mismo día que empezaron a escribir.</li>
+    </ol>
+
+    <p>La seguridad de un servidor no es una configuración que se hace una vez y se olvida. Revisar el registro de auditoría cada cierto tiempo y ajustar estos límites según cómo crece la comunidad es lo que mantiene fuera a la mayoría de los problemas antes de que lleguen a ser graves.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

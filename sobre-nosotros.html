@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre nosotros — Guía Discord</title>
+<meta name="description" content="Qué es Guía Discord y qué tipo de contenido publicamos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html" class="active">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">sobre-nosotros</p>
+    <h1>Qué es Guía Discord</h1>
+  </section>
+
+  <article class="legal">
+    <h2>Nuestro propósito</h2>
+    <p>Guía Discord es un sitio de referencia con guías prácticas para organizar servidores de Discord: estructura de canales, configuración de roles y permisos, selección de bots y buenas prácticas de seguridad. Escribimos pensando en administradores de servidores nuevos o en crecimiento que quieren evitar los errores más comunes sin tener que aprenderlos a base de prueba y error.</p>
+
+    <h2>Qué encontrarás aquí</h2>
+    <p>Cada guía está pensada para poder aplicarse directamente: ejemplos de estructura de canales, listas de roles con sus permisos recomendados, y bots concretos organizados por categoría, en lugar de listas genéricas de "los 50 mejores bots" sin contexto.</p>
+
+    <h2>Lo que no somos</h2>
+    <p>No somos parte de Discord Inc. ni de ninguno de los bots o servicios que mencionamos en nuestras guías; los nombramos únicamente como referencia porque son ejemplos conocidos dentro de su categoría. Cualquier marca mencionada pertenece a sus respectivos creadores.</p>
+
+    <h2>Actualización del contenido</h2>
+    <p>Las funciones de Discord y de los bots de terceros cambian con el tiempo. Revisamos periódicamente nuestras guías, pero siempre recomendamos confirmar los detalles específicos (sobre todo permisos y funciones de bots) directamente en la fuente oficial antes de aplicar cualquier cambio importante en tu servidor.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

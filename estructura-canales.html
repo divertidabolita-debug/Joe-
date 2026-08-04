@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo estructurar los canales de tu servidor de Discord</title>
+<meta name="description" content="Guía práctica sobre categorías, nombres de canal y errores comunes al organizar un servidor de Discord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html" class="active">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">estructura-canales</p>
+    <h1>Menos canales, mejor organizados</h1>
+    <p class="post-meta">Guía Discord <span class="sep">·</span> actualizado recientemente <span class="sep">·</span> 6 min de lectura</p>
+  </section>
+
+  <article>
+    <p>El error más común al crear un servidor es abrir un canal por cada idea que surge el primer día: uno para memes, otro para arte, otro para música, otro para mascotas. A las dos semanas, la mitad están vacíos y el servidor se siente muerto aunque tenga miembros activos. Un servidor claro empieza con pocas categorías y las expande solo cuando la actividad real lo justifica.</p>
+
+    <h2>La regla de los tres bloques</h2>
+    <p>Para casi cualquier tipo de comunidad, tres bloques de categorías cubren lo esencial: <strong>bienvenida</strong> (lo primero que ve alguien nuevo), <strong>comunidad</strong> (donde ocurre la conversación diaria) y <strong>soporte</strong> (donde se resuelven dudas y problemas). Todo lo demás — canales de voz, canales temáticos, canales de eventos — se añade sobre esa base, no en lugar de ella.</p>
+
+    <div class="tree">
+      <p class="tree-category">Bienvenida</p>
+      <div class="tree-channel">reglas</div>
+      <div class="tree-channel">anuncios</div>
+      <div class="tree-channel">presentate</div>
+      <p class="tree-category">Comunidad</p>
+      <div class="tree-channel">general</div>
+      <div class="tree-channel">memes</div>
+      <div class="tree-channel">off-topic</div>
+      <p class="tree-category">Soporte</p>
+      <div class="tree-channel">preguntas</div>
+      <div class="tree-channel">reportar-problema</div>
+      <p class="tree-category">Voz</p>
+      <div class="tree-channel voice">sala-general</div>
+      <div class="tree-channel voice">sala-2</div>
+    </div>
+
+    <h2>Cuándo sí conviene añadir un canal nuevo</h2>
+    <p>Un canal nuevo se justifica cuando una conversación específica empieza a dominar el canal general de forma constante, no cuando a alguien se le ocurre un tema interesante una sola vez. Si notas que la mitad de los mensajes de #general son sobre el mismo juego, evento o tema durante varios días seguidos, ahí sí tiene sentido darle su propio espacio.</p>
+
+    <h2>Nombres de canal: claridad antes que creatividad</h2>
+    <p>Un nombre como #zona-random puede sonar divertido, pero no le dice a un miembro nuevo qué encontrará ahí. Nombres descriptivos y en minúsculas, sin emojis excesivos, hacen que alguien que entra por primera vez entienda el servidor en diez segundos sin tener que preguntar.</p>
+
+    <h2>La regla de las dos semanas</h2>
+    <div class="callout">
+      <p><strong>Regla práctica:</strong> si un canal lleva más de dos semanas sin un solo mensaje, archívalo o bórralo. Un canal vacío no invita a participar — comunica, sin querer, que el servidor está abandonado.</p>
+    </div>
+
+    <h2>Adapta la base a tu tipo de servidor</h2>
+    <ul>
+      <li><strong>Servidores de gaming:</strong> añade canales de "buscar grupo" o "looking for group" separados por juego, y salas de voz temporales que se crean y borran solas según haya gente conectada.</li>
+      <li><strong>Servidores educativos o de estudio:</strong> organiza por tema o nivel en lugar de por tipo de mensaje — un canal por materia funciona mejor que un canal genérico de "dudas".</li>
+      <li><strong>Servidores de una marca o proyecto:</strong> separa claramente anuncios oficiales (solo lectura) de la conversación de la comunidad, para que ambos flujos no se mezclen.</li>
+    </ul>
+
+    <p>La estructura de canales no es algo que se defina una sola vez. Revísala cada dos o tres meses, borra lo que no se usa y dale espacio propio a lo que sí está creciendo. Un servidor ordenado no es el que tiene más canales, sino el que hace obvio dónde hablar de qué.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

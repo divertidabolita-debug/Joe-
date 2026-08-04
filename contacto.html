@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Guía Discord</title>
+<meta name="description" content="Cómo contactar al equipo de Guía Discord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">contacto</p>
+    <h1>Escríbenos</h1>
+    <p>¿Encontraste un error en alguna guía, tienes una sugerencia o quieres reportar contenido? Este es el lugar.</p>
+  </section>
+
+  <article class="legal">
+    <div class="contact-box">
+      <p><strong>Correo:</strong> <a href="mailto:contacto@tu-dominio-aqui.com">contacto@tu-dominio-aqui.com</a></p>
+      <p style="font-size:0.8rem; color:var(--text-dim);">⚠️ Reemplaza esta dirección por tu correo real antes de publicar el sitio — está de ejemplo.</p>
+    </div>
+
+    <h2 style="margin-top:36px;">También puedes escribir directamente</h2>
+    <p>El siguiente formulario abre tu programa de correo por defecto con el mensaje ya redactado hacia la dirección de arriba — no requiere ningún servidor externo para funcionar.</p>
+
+    <form action="mailto:contacto@tu-dominio-aqui.com" method="post" enctype="text/plain" style="display:flex; flex-direction:column; gap:16px; max-width:480px; margin-top:20px;">
+      <div>
+        <label style="font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:6px;">Nombre</label>
+        <input type="text" name="nombre" required style="width:100%; background:var(--bg-raised); border:1px solid var(--line); border-radius:8px; padding:11px 13px; color:var(--text); font-family:var(--body);">
+      </div>
+      <div>
+        <label style="font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:6px;">Correo</label>
+        <input type="email" name="correo" required style="width:100%; background:var(--bg-raised); border:1px solid var(--line); border-radius:8px; padding:11px 13px; color:var(--text); font-family:var(--body);">
+      </div>
+      <div>
+        <label style="font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:6px;">Mensaje</label>
+        <textarea name="mensaje" rows="5" required style="width:100%; background:var(--bg-raised); border:1px solid var(--line); border-radius:8px; padding:11px 13px; color:var(--text); font-family:var(--body); resize:vertical;"></textarea>
+      </div>
+      <button type="submit" style="align-self:flex-start; background:var(--lavender); color:#100f18; border:none; padding:12px 22px; border-radius:8px; font-weight:600; font-family:var(--body); cursor:pointer;">Enviar mensaje</button>
+    </form>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

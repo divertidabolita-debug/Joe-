@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los mejores bots de Discord por categoría</title>
+<meta name="description" content="Bots recomendados de moderación, comunidad y utilidad para servidores de Discord, con ejemplos de comandos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html" class="active">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">mejores-bots</p>
+    <h1>Un bot por función, no cinco que se pisan entre sí</h1>
+    <p class="post-meta">Guía Discord <span class="sep">·</span> actualizado recientemente <span class="sep">·</span> 7 min de lectura</p>
+  </section>
+
+  <article>
+    <p>Instalar muchos bots que hacen lo mismo genera comandos duplicados, respuestas contradictorias y un servidor más lento. La estrategia que mejor funciona es elegir un solo bot por categoría, según lo que tu servidor realmente necesita, y revisar sus permisos antes de invitarlo.</p>
+
+    <h2>Moderación</h2>
+    <div class="bot-grid">
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:rgba(255,107,107,0.14); color:#ff8f8f;">🛡️</div>
+          <div><p class="bot-name">Carl-bot</p><p class="bot-category">Moderación y automatización</p></div>
+        </div>
+        <p>Automod configurable, reaction roles y mensajes de bienvenida personalizables. Buena opción cuando quieres control fino sin escribir código.</p>
+        <span class="bot-cmd">/automod config</span>
+      </div>
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:rgba(255,107,107,0.14); color:#ff8f8f;">🔨</div>
+          <div><p class="bot-name">Dyno</p><p class="bot-category">Moderación</p></div>
+        </div>
+        <p>Panel web sencillo para reglas de auto-moderación, logs de mensajes borrados y sanciones temporizadas. Buena opción para administrar desde el navegador.</p>
+        <span class="bot-cmd">?warn @usuario motivo</span>
+      </div>
+    </div>
+
+    <h2>Comunidad</h2>
+    <div class="bot-grid">
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:var(--lavender-dim); color:var(--lavender);">🎚️</div>
+          <div><p class="bot-name">MEE6</p><p class="bot-category">Niveles y engagement</p></div>
+        </div>
+        <p>Sistema de niveles por actividad, roles automáticos al subir de nivel y comandos personalizados. Útil para incentivar participación en servidores grandes.</p>
+        <span class="bot-cmd">!rank @usuario</span>
+      </div>
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:var(--lavender-dim); color:var(--lavender);">🎲</div>
+          <div><p class="bot-name">Dank Memer</p><p class="bot-category">Entretenimiento</p></div>
+        </div>
+        <p>Minijuegos, economía virtual y comandos de humor. Le da vida a canales de "off-topic" que de otro modo quedan vacíos.</p>
+        <span class="bot-cmd">pls beg</span>
+      </div>
+    </div>
+
+    <h2>Utilidad</h2>
+    <div class="bot-grid">
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:rgba(255,184,107,0.14); color:var(--amber);">🎟️</div>
+          <div><p class="bot-name">Ticket Tool</p><p class="bot-category">Soporte</p></div>
+        </div>
+        <p>Crea canales privados de soporte por ticket en lugar de saturar un único canal de ayuda. Esencial en servidores de venta o soporte técnico.</p>
+        <span class="bot-cmd">/ticket panel</span>
+      </div>
+      <div class="bot-card">
+        <div class="bot-card-head">
+          <div class="bot-icon" style="background:rgba(255,184,107,0.14); color:var(--amber);">📊</div>
+          <div><p class="bot-name">Statbot</p><p class="bot-category">Estadísticas</p></div>
+        </div>
+        <p>Dashboard de actividad del servidor: mensajes por canal, horas pico y crecimiento de miembros. Útil para decidir qué canales se usan de verdad.</p>
+        <span class="bot-cmd">panel web</span>
+      </div>
+    </div>
+
+    <h2>Cómo elegir entre bots parecidos</h2>
+    <ul>
+      <li><strong>Empieza por el problema, no por el bot:</strong> define primero qué necesitas resolver (spam, tickets, niveles) antes de buscar el bot de moda.</li>
+      <li><strong>Revisa los permisos al invitarlo:</strong> si un bot de música pide permisos de administrador, es una señal de alerta, no algo normal.</li>
+      <li><strong>Confirma que siga en desarrollo activo:</strong> muchos bots populares han cerrado o perdido funciones con el tiempo, sobre todo los de música por restricciones de las plataformas de streaming.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Antes de agregar cualquier bot:</strong> revisa qué permisos pide al invitarlo y evita darle "Administrador" por defecto. Los nombres mencionados aquí son marcas de sus respectivos creadores y se citan solo como referencia.</p>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){ setTimeout(() => banner.classList.add('show'), 600); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { setCookie('cookie_consent','accepted',180); banner.classList.remove('show'); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { setCookie('cookie_consent','declined',180); banner.classList.remove('show'); });
+</script>
+
+</body>
+</html>

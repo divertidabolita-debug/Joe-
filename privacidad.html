@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad y cookies — Guía Discord</title>
+<meta name="description" content="Política de privacidad, cookies y publicidad de Guía Discord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding-bottom:0; border-bottom:none; margin-bottom:0;">
+    <p class="eyebrow">privacidad</p>
+    <h1>Política de privacidad y cookies</h1>
+    <p>Última actualización: <span id="today"></span></p>
+  </section>
+
+  <article class="legal">
+    <div class="callout">
+      <p><strong>Nota antes de publicar:</strong> este es un modelo de política de privacidad orientado a un sitio con anuncios de Google AdSense. Antes de publicarlo, reemplaza los datos de contacto por los reales y, si vas a operar en la Unión Europea o Reino Unido, revisa si necesitas una plataforma de gestión del consentimiento (CMP) certificada por Google además de este aviso — esto no sustituye asesoría legal.</p>
+    </div>
+
+    <h2>Qué información recopilamos</h2>
+    <p>Este sitio no requiere registro ni cuenta de usuario. La información que podemos recopilar es la siguiente:</p>
+    <p><strong>Datos de navegación:</strong> como en la mayoría de sitios web, nuestro proveedor de hosting y las herramientas de análisis que usemos pueden registrar automáticamente datos como tu dirección IP, tipo de navegador, páginas visitadas y tiempo de permanencia.</p>
+    <p><strong>Datos del formulario de contacto:</strong> si nos escribes usando el formulario de la página de contacto, recibimos el nombre, correo y mensaje que decidas enviarnos. Usamos esos datos únicamente para responder tu consulta.</p>
+
+    <h2>Cookies</h2>
+    <p>Usamos cookies propias para recordar tu elección sobre el aviso de cookies. Si aceptas, también pueden activarse cookies de terceros usadas por nuestro proveedor de publicidad y, si lo añadimos en el futuro, por herramientas de analítica.</p>
+
+    <h2>Publicidad con Google AdSense</h2>
+    <p>Este sitio puede mostrar anuncios a través de Google AdSense. Google, como proveedor externo, utiliza cookies para publicar anuncios basados en visitas anteriores de un usuario a este sitio o a otros sitios en internet. El uso de cookies publicitarias permite a Google y a sus socios publicar anuncios basados en tu visita a este sitio y/o a otros sitios en internet.</p>
+    <p>Puedes inhabilitar la publicidad personalizada visitando los ajustes de anuncios de Google. También puedes revisar cómo Google usa los datos cuando usas sitios o aplicaciones de sus socios en la página de políticas de privacidad de Google.</p>
+
+    <h2>Tus derechos</h2>
+    <p>Puedes solicitarnos en cualquier momento acceder, corregir o eliminar los datos personales que nos hayas proporcionado a través del formulario de contacto, escribiéndonos a la dirección indicada en nuestra página de contacto.</p>
+
+    <h2>Enlaces a otros sitios</h2>
+    <p>Nuestras guías pueden mencionar o enlazar a bots, herramientas o servicios de terceros. No somos responsables de las prácticas de privacidad de esos sitios externos; te recomendamos revisar su propia política antes de usarlos.</p>
+
+    <h2>Cambios en esta política</h2>
+    <p>Podemos actualizar esta política ocasionalmente para reflejar cambios legales o en nuestras prácticas. La fecha de la última actualización aparece al inicio de esta página.</p>
+
+    <h2>Contacto</h2>
+    <p>Si tienes preguntas sobre esta política, escríbenos desde nuestra <a href="contacto.html" style="color:var(--lavender); border-bottom:1px solid var(--lavender-dim);">página de contacto</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('today').textContent = new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' });
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+
+</body>
+</html>
