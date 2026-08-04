@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía Discord — Cómo organizar tu servidor y elegir los mejores bots</title>
+<meta name="description" content="Guías prácticas para estructurar canales, configurar roles y permisos, y elegir bots para tu servidor de Discord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Guía Discord</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="estructura-canales.html">Estructura</a>
+      <a href="roles-permisos.html">Roles</a>
+      <a href="mejores-bots.html">Bots</a>
+      <a href="seguridad-servidor.html">Seguridad</a>
+      <a href="sobre-nosotros.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">Menú</button>
+  </div>
+</header>
+
+<main class="wide">
+  <section class="page-hero">
+    <p class="eyebrow">bienvenida</p>
+    <h1>Guías claras para servidores de Discord que sí funcionan</h1>
+    <p>Nada de teoría abstracta: estructura de canales, roles y permisos, bots recomendados por categoría y buenas prácticas de seguridad, explicado con ejemplos que puedes copiar directo a tu servidor.</p>
+  </section>
+
+  <div class="card-grid">
+    <a href="estructura-canales.html" class="art-card">
+      <p class="eyebrow">estructura</p>
+      <h3>Cómo estructurar canales sin saturar tu servidor</h3>
+      <p>Categorías, nombres de canal y el error más común que vacía un servidor en semanas.</p>
+    </a>
+    <a href="roles-permisos.html" class="art-card">
+      <p class="eyebrow">roles</p>
+      <h3>Roles y permisos: la jerarquía mínima que necesitas</h3>
+      <p>Cuatro niveles de rol explicados, con lo que cada uno debería y no debería poder hacer.</p>
+    </a>
+    <a href="mejores-bots.html" class="art-card">
+      <p class="eyebrow">bots</p>
+      <h3>Los bots que de verdad vale la pena instalar</h3>
+      <p>Moderación, comunidad y utilidad: un bot recomendado por función, no cinco que se pisan.</p>
+    </a>
+    <a href="seguridad-servidor.html" class="art-card">
+      <p class="eyebrow">seguridad</p>
+      <h3>Seguridad básica: raids, spam y verificación</h3>
+      <p>Cómo proteger tu servidor de ataques de bots y de la invasión clásica de cuentas falsas.</p>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Guía Discord. Contenido de referencia general, no afiliado a Discord Inc.</span>
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="privacidad.html">Privacidad y cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias y de terceros (incluida publicidad) para mejorar tu experiencia. Más info en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Rechazar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Aviso de cookies simple basado en cookie propia (sin localStorage)
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  function setCookie(name, value, days){
+    const d = new Date();
+    d.setTime(d.getTime() + days*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+  }
+  const banner = document.getElementById('cookieBanner');
+  if (!getCookie('cookie_consent')){
+    setTimeout(() => banner.classList.add('show'), 600);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    setCookie('cookie_consent', 'accepted', 180);
+    banner.classList.remove('show');
+  });
+  document.getElementById('cookieDecline').addEventListener('click', () => {
+    setCookie('cookie_consent', 'declined', 180);
+    banner.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>
